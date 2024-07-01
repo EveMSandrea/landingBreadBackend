@@ -3,6 +3,8 @@ package com.landingbread.backend.landingbread.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import static jakarta.persistence.GenerationType.*;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -17,10 +19,11 @@ public class User {
 
 private Long id;
 private String name;
-// @Column(lastname="apellidos")convension por Sobreconfiguracion.Cuando un dato no coincide
+@Column(name="lastname")//Cuando hay conflicto por convension de nombres de atributos en la bd y el dato no coincide
 private String lastName;
 // @Transient Si no hay ninguna columna en la tabla con el nombre del campo requerido
 private String email;
+@Column(name="username")
 private String userName;
 private String password;
 
